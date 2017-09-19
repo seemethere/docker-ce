@@ -1,8 +1,8 @@
 CLI_DIR:=$(CURDIR)/components/cli
 ENGINE_DIR:=$(CURDIR)/components/engine
 PACKAGING_DIR:=$(CURDIR)/components/packaging
-MOBY_COMPONENTS_SHA=c54159187efebc6155821dc0493c2294e83203c1
-MOBY_COMPONENTS_URL=https://raw.githubusercontent.com/shykes/moby-extras/$(MOBY_COMPONENTS_SHA)/cmd/moby-components
+MOBY_COMPONENTS_SHA=fix_for_older_git_versions
+MOBY_COMPONENTS_URL=https://raw.githubusercontent.com/seemethere/moby-extras/$(MOBY_COMPONENTS_SHA)/cmd/moby-components
 MOBY_COMPONENTS=.helpers/moby-components-$(MOBY_COMPONENTS_SHA)
 VERSION=$(shell cat VERSION)
 
