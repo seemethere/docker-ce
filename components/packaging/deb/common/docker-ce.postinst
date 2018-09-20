@@ -1,6 +1,12 @@
 #!/bin/sh
 set -e
 
+update_dockerd() {
+	if [ ! -f /usr/bin/dockerd ]; then
+		update-alternatives --install /usr/bin/dockerd dockerd /usr/bin/dockerd-ce 1
+	fi
+}
+
 case "$1" in
 	configure)
 		if [ -z "$2" ]; then
@@ -8,6 +14,10 @@ case "$1" in
 				groupadd --system docker
 			fi
 		fi
+		update_dockerd
+		;;
+	update)
+		update_dockerd
 		;;
 	abort-*)
 		# How'd we get here??
